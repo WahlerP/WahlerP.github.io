@@ -74,6 +74,9 @@ Note: If you open our notebooks you can always edit the code without changing th
 
 To access/run the notebooks just click on the respective Google Colab links. If you get the warning “This notebook was not authored by Google” don’t worry, just press “Run Anyway”.
 
+# Licence
+This collection is released under the "No Rights Reserved" CC0 license, and thus you are free to re-use, modify, build-on, and enhance this material for any purpose. Read more about CC0 [here](https://creativecommons.org/share-your-work/public-domain/cc0/).
+
 # Sources
 This collection of notebooks was created with the help of the following materials:
 
