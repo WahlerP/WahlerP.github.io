@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01_01_Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>01_07_Built_In_Data_Types_Data_Structures</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,54 +14259,1547 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_07_Built_In_Data_Types_Data_Structures.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="data:image/png;base64,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" alt="68747470733a2f2f65617379706173737265736f75726365732e7765622e6170702f45617379706173735f626c61636b2e7376673f7261773d74727565.png"></p>
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_06_Built_In_Data_Types_Scalars.ipynb#scrollTo=1JTh3vfJePQo">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_08_Built_In_Data_Types_Type_Conversion.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_07_Built_In_Data_Types_Data_Structures.ipynb#scrollTo=fIvQcNkd5zzM"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+<h1 id="Built-In-Data-Types:-Structures">Built-In Data Types: Structures<a class="anchor-link" href="#Built-In-Data-Types:-Structures">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Welcome to the official EasyPass Coding Crashcourse!</strong></p>
-<p>The following documents intend to give you a detailed, yet comprehensive understanding of Python. While some not exam relevant topics are covered for the sake of completeness, we try to keep it as concise as possible. Thereby we hope to make it easier for you to navigate the maze that is the new Fundamentals of Computer Science course at HSG.</p>
-<p>Conceived in the late 1980s, Python has since become an essential tool for many programmers, engineers, researchers, and data scientists across academia and industry.
-As a business student, Python will most likely be helpful for extracting meaning from large astronomical datasets, scraping and munging data sources from the Web, or automating day-to-day research tasks.</p>
-<p>The appeal of Python is in its simplicity and beauty, as well as the convenience of the large ecosystem of domain-specific tools that have been built on top of it.
-For example, most of the Python code in scientific computing and data science is built around a group of mature and useful packages:</p>
-<ul>
-<li><a href="http://numpy.org">NumPy</a> provides efficient storage and computation for multi-dimensional data arrays.</li>
-<li><a href="http://scipy.org">SciPy</a> contains a wide array of numerical tools such as numerical integration and interpolation.</li>
-<li><a href="http://pandas.pydata.org">Pandas</a> provides a DataFrame object along with a powerful set of methods to manipulate, filter, group, and transform data.</li>
-<li><a href="http://matplotlib.org">Matplotlib</a> provides a useful interface for creation of publication-quality plots and figures.</li>
-<li><a href="http://scikit-learn.org">Scikit-Learn</a> provides a uniform toolkit for applying common machine learning algorithms to data.</li>
-<li><a href="http://jupyter.org">IPython/Jupyter</a> provides an enhanced terminal and an interactive notebook environment that is useful for exploratory analysis, as well as creation of interactive, executable documents. For example, the manuscript for this report was composed entirely in Jupyter notebooks.</li>
-</ul>
-<p>No less important are the numerous other tools and packages which accompany these: if there is a scientific or data analysis task you want to perform, chances are someone has written a package that will do it for you.</p>
-<p>To tap into the power of this ecosystem, however, first requires familiarity with the Python language itself.</p>
-<p>As such, this report in no way aims to be a comprehensive introduction to programming, or a full introduction to the Python language itself; if that is what you are looking for, you might check out one of the recommended references listed in <a href="16-Further-Resources.ipynb">Resources for Learning</a>.
-Instead, this will provide a whirlwind tour of some of Python's essential aspects, which are relevant for the exam. We'll start of by building a solid foundation of Phyton's core syntax and semantics, after which we'll take a deep dive into the core principles of data science and machine learning.</p>
+<p>We have seen Python's simple types: <code>int</code>, <code>float</code>, <code>complex</code>, <code>bool</code>, <code>str</code>, and so on.
+Python also has several built-in compound types, which act as containers for other types.
+These compound types are:</p>
+<table>
+<thead><tr>
+<th>Type Name</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>[1, 2, 3]</code></td>
+<td>Ordered collection</td>
+</tr>
+<tr>
+<td><code>tuple</code></td>
+<td><code>(1, 2, 3)</code></td>
+<td>Immutable ordered collection</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td><code>{'a':1, 'b':2, 'c':3}</code></td>
+<td>Unordered (key,value) mapping</td>
+</tr>
+<tr>
+<td><code>set</code></td>
+<td><code>{1, 2, 3}</code></td>
+<td>Unordered collection of unique values</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, round, square, and curly brackets have distinct meanings when it comes to the type of collection produced.
+We'll take a quick tour of these data structures here.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With that, let's start our tour of the Python language.</p>
+<h2 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h2><p>Lists are the basic <em>ordered</em> and <em>mutable</em> data collection type in Python.
+They can be defined with comma-separated values between square brackets; for example, here is a list of the first several prime numbers:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Lists have a number of useful properties and methods available to them.
+Here we'll take a quick look at some of the more common and useful ones:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Length of a list</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Append a value to the end</span>
+<span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">L</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 3, 5, 7, 11]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Addition concatenates lists</span>
+<span class="n">L</span> <span class="o">+</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 3, 5, 7, 11, 13, 17, 19]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># sort() method sorts in-place</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">L</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[1, 2, 3, 4, 5, 6]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In addition, there are many more built-in list methods; they are well-covered in Python's <a href="https://docs.python.org/3/tutorial/datastructures.html">online documentation</a>.</p>
+<p>While we've been demonstrating lists containing values of a single type, one of the powerful features of Python's compound objects is that they can contain objects of <em>any</em> type, or even a mix of types. For example:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This flexibility is a consequence of Python's dynamic type system.
+Creating such a mixed sequence in a statically-typed language like C can be much more of a headache!
+We see that lists can even contain other lists as elements.
+Such type flexibility is an essential piece of what makes Python code relatively quick and easy to write.</p>
+<p>So far we've been considering manipulations of lists as a whole; another essential piece is the accessing of individual elements.
+This is done in Python via <em>indexing</em> and <em>slicing</em>, which we'll explore next.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>&lt; | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb">Next Page</a> &gt;</p>
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb#scrollTo=SwRbHYOsw7HX"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
+<h3 id="List-indexing-and-slicing">List indexing and slicing<a class="anchor-link" href="#List-indexing-and-slicing">&#182;</a></h3><p>Python provides access to elements in compound types through <em>indexing</em> for single elements, and <em>slicing</em> for multiple elements.
+As we'll see, both are indicated by a square-bracket syntax.
+Suppose we return to our list of the first several primes:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Python uses <em>zero-based</em> indexing, so we can access the first and second element in using the following syntax:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Elements at the end of the list can be accessed with negative numbers, starting from -1:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>11</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>7</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can visualize this indexing scheme this way:</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="data:image/png;base64,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cKfmzp2bOsfB2eTBTp06MZcGsAgBOoeee+45ffPNN9mGZz8/Py1ZskRNmjSxokzkU/Hx8fr5559dmmAUGBhoQkWw0qFDh7Ru3bpM348yevjhh02qCjnl6uRB1n4GrEOAzoGRI0dqxowZ2YbnQoUK6ZtvvlGbNm2sKBP52PTp03X9+nVJzld88fb2VrNmzUytDeYbNWpUlvel7Q+VK1dWo0aNTKgIObV161YdOHBAkvO/7SpVqqht27am1gbg/xGgDXr//fc1duzYbMOzl5eX5syZoyeffNKKMpGPXb16Ve+//77TI1SOU7wNGzaUv7+/idXBbGvXrtXChQudHn129Idu3bqZXB2Mmj59utP7Ha8lS9cB1iJAGzBt2jS9+eabLn1QTZ06lckd+YynXP74ueee08WLFyU5X21Bknr16mVGSbDIhQsX1Ldv3yy/TKW93cvLS0OGDDGrNOTAtWvX9O2332Y7edBms6lfv35mlgYgAwK0ixYsWKB//etfTj+oHOF57Nix+uc//2lyhXC3bdu2qUGDBlqyZIllNbz11ltOjzam7Z++vr58iTPBSy+9pAsXLpjebnR0tB5//HGdPXtWUtZfphzvS507d1b16tXNLBEGffnll7px44Yk55MHW7ZsqWrVqplcHYC0CNAu+Omnn9SvX7/UN7SsFrW32Wx65513NHz4cCvKhAl2796tTp066f7779dnn32W+mHnbnFxcRo4cKDee++9bCeKOfri4MGDuWCPCSZPnqyaNWvqxRdf1LFjx0xp88iRI2ratGmW689Lt1885T//+Y8ptSHnZs6c6dJ2rP0MWI8AnY1169ape/fuSklJkeQ8PL/88st69913rSgTJrLZbDp06JCGDBmiihUravDgwdq8ebPb2luzZo2Cg4M1e/Zsp+E5bWAKCAjQ66+/7raakF5CQoI++eQT1alTRx06dNB3332nxMTEXG8nOTlZEydOVIMGDXT06FGXv0y9/PLLuvfee3O9HuSeXbt2KTIy0un8GkkqXry4unTpYnZ5ADIgQDvx22+/qWPHjlmux5k2PA8cOFDjxo2zokxYxGazKTY2VjNmzFBoaKgqV66s559/Xj/99JOuXr16R88dHx+v2bNnq2nTpnrkkUd06tQpl5Yoc/THcePG6Z577rmjGmCMI+T88ssv6t69u8qVK6fevXvr66+/1p9/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" alt="list-indexing.png"></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Here values in the list are represented by large numbers in the squares; list indices are represented by small numbers above and below.
+In this case, <code>L[2]</code> returns <code>5</code>, because that is the next value at index <code>2</code>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Where <em>indexing</em> is a means of fetching a single value from the list, <em>slicing</em> is a means of accessing multiple values in sub-lists.
+It uses a colon to indicate the start point (inclusive) and end point (non-inclusive) of the sub-array.
+For example, to get the first three elements of the list, we can write:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 3, 5]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Notice where <code>0</code> and <code>3</code> lie in the preceding diagram, and how the slice takes just the values between the indices.
+If we leave out the first index, <code>0</code> is assumed, so we can equivalently write:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 3, 5]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Similarly, if we leave out the last index, it defaults to the length of the list.
+Thus, the last three elements can be accessed as follows:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[5, 7, 11]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Finally, it is possible to specify a third integer that represents the step size; for example, to select every second element of the list, we can write:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># equivalent to L[0:len(L):2]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[2, 5, 11]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A particularly useful version of this is to specify a negative step, which will reverse the array:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[11, 7, 5, 3, 2]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Both indexing and slicing can be used to set elements as well as access them.
+The syntax is as you would expect:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[100, 3, 5, 7, 11]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[100, 55, 56, 7, 11]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A very similar slicing syntax is also used in many data science-oriented packages, including NumPy and Pandas (mentioned in the introduction).</p>
+<p>Now that we have seen Python lists and how to access elements in ordered compound types, let's take a look at the other three standard compound data types mentioned earlier.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Tuples">Tuples<a class="anchor-link" href="#Tuples">&#182;</a></h2><p>Tuples are in many ways similar to lists, but they are defined with parentheses rather than square brackets:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>They can also be defined without any brackets at all:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>(1, 2, 3)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Like the lists discussed before, tuples have a length, and individual elements can be extracted using square-bracket indexing:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The main distinguishing feature of tuples is that they are <em>immutable</em>: this means that once they are created, their size and contents cannot be changed:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-23-141c76cb54a2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>t<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">4</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-24-e8bd1632f9dd&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>t<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Tuples are often used in a Python program; a particularly common case is in functions that have multiple return values.
+For example, the <code>as_integer_ratio()</code> method of floating-point objects returns a numerator and a denominator; this dual return value comes in the form of a tuple:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.125</span>
+<span class="n">x</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(1, 8)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>These multiple return values can be individually assigned as follows:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0.125
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The indexing and slicing logic covered earlier for lists works for tuples as well, along with a host of other methods.
+Refer to the online <a href="https://docs.python.org/3/tutorial/datastructures.html">Python documentation</a> for a more complete list of these.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Dictionaries">Dictionaries<a class="anchor-link" href="#Dictionaries">&#182;</a></h2><p>Dictionaries are extremely flexible mappings of keys to values, and form the basis of much of Python's internal implementation.
+They can be created via a comma-separated list of <code>key:value</code> pairs within curly braces:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Items are accessed and set via the indexing syntax used for lists and tuples, except here the index is not a zero-based order but valid key in the dictionary:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Access a value via the key</span>
+<span class="n">numbers</span><span class="p">[</span><span class="s1">&#39;two&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>New items can be added to the dictionary using indexing as well:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Set a new key:value pair</span>
+<span class="n">numbers</span><span class="p">[</span><span class="s1">&#39;ninety&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;three&#39;: 3, &#39;ninety&#39;: 90, &#39;two&#39;: 2, &#39;one&#39;: 1}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Keep in mind that dictionaries do not maintain any sense of order for the input parameters; this is by design.
+This lack of ordering allows dictionaries to be implemented very efficiently, so that random element access is very fast, regardless of the size of the dictionary. 
+The <a href="https://docs.python.org/3/library/stdtypes.html">python documentation</a> has a complete list of the methods available for dictionaries</p>
+<p>Dictionaries are generally used when we have a huge amount of data. Dictionaries are optimized for retrieving data. We must know the key to retrieve the value.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>dict</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We use key to retrieve the respective value. But not the other way around.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d[1] = &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d[&#39;key&#39;] = &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;dict&#39;&gt;
+d[1] =  value
+d[&#39;key&#39;] =  2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Generates error</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d[2] = &quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-f6f570674869&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Generates error</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;d[2] = &#34;</span><span class="ansi-blue-fg">,</span> d<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">;</span>
+
+<span class="ansi-red-fg">KeyError</span>: 2</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Sets">Sets<a class="anchor-link" href="#Sets">&#182;</a></h2><p>The fourth basic collection is the set, which contains unordered collections of unique items.
+They are defined much like lists and tuples, except they use the curly brackets of dictionaries:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">odds</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If you're familiar with the mathematics of sets, you'll be familiar with operations like the union, intersection, difference, symmetric difference, and others.
+Python's sets have all of these operations built-in, via methods or operators.
+For each, we'll show the two equivalent methods:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># union: items appearing in either</span>
+<span class="n">primes</span> <span class="o">|</span> <span class="n">odds</span>      <span class="c1"># with an operator</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">odds</span><span class="p">)</span> <span class="c1"># equivalently with a method</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{1, 2, 3, 5, 7, 9}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># intersection: items appearing in both</span>
+<span class="n">primes</span> <span class="o">&amp;</span> <span class="n">odds</span>             <span class="c1"># with an operator</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">odds</span><span class="p">)</span> <span class="c1"># equivalently with a method</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{3, 5, 7}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># difference: items in primes but not in odds</span>
+<span class="n">primes</span> <span class="o">-</span> <span class="n">odds</span>           <span class="c1"># with an operator</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">odds</span><span class="p">)</span> <span class="c1"># equivalently with a method</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{2}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># symmetric difference: items appearing in only one set</span>
+<span class="n">primes</span> <span class="o">^</span> <span class="n">odds</span>                     <span class="c1"># with an operator</span>
+<span class="n">primes</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">odds</span><span class="p">)</span> <span class="c1"># equivalently with a method</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{1, 2, 9}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Many more set methods and operations are available.
+While they are generally not important for the exam do refer to Python's <a href="https://docs.python.org/3/library/stdtypes.html">online documentation</a> for a complete reference.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_06_Built_In_Data_Types_Scalars.ipynb#scrollTo=1JTh3vfJePQo">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_08_Built_In_Data_Types_Type_Conversion.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_07_Built_In_Data_Types_Data_Structures.ipynb#scrollTo=fIvQcNkd5zzM"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>

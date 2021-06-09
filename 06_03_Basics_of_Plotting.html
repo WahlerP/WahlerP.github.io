@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01_01_Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>06_03_Basics_of_Plotting</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,54 +14259,477 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_03_Basics_of_Plotting.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="data:image/png;base64,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" alt="68747470733a2f2f65617379706173737265736f75726365732e7765622e6170702f45617379706173735f626c61636b2e7376673f7261773d74727565.png"></p>
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_02_Matplotlib.ipynb#scrollTo=gHhoR15gZlaR">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_04_Line_Scatter_Plots.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_03_Basics_of_Plotting.ipynb#scrollTo=BW2Z_lFgDi6y"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+<h2 id="Let's-start-plotting">Let's start plotting<a class="anchor-link" href="#Let's-start-plotting">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Welcome to the official EasyPass Coding Crashcourse!</strong></p>
-<p>The following documents intend to give you a detailed, yet comprehensive understanding of Python. While some not exam relevant topics are covered for the sake of completeness, we try to keep it as concise as possible. Thereby we hope to make it easier for you to navigate the maze that is the new Fundamentals of Computer Science course at HSG.</p>
-<p>Conceived in the late 1980s, Python has since become an essential tool for many programmers, engineers, researchers, and data scientists across academia and industry.
-As a business student, Python will most likely be helpful for extracting meaning from large astronomical datasets, scraping and munging data sources from the Web, or automating day-to-day research tasks.</p>
-<p>The appeal of Python is in its simplicity and beauty, as well as the convenience of the large ecosystem of domain-specific tools that have been built on top of it.
-For example, most of the Python code in scientific computing and data science is built around a group of mature and useful packages:</p>
-<ul>
-<li><a href="http://numpy.org">NumPy</a> provides efficient storage and computation for multi-dimensional data arrays.</li>
-<li><a href="http://scipy.org">SciPy</a> contains a wide array of numerical tools such as numerical integration and interpolation.</li>
-<li><a href="http://pandas.pydata.org">Pandas</a> provides a DataFrame object along with a powerful set of methods to manipulate, filter, group, and transform data.</li>
-<li><a href="http://matplotlib.org">Matplotlib</a> provides a useful interface for creation of publication-quality plots and figures.</li>
-<li><a href="http://scikit-learn.org">Scikit-Learn</a> provides a uniform toolkit for applying common machine learning algorithms to data.</li>
-<li><a href="http://jupyter.org">IPython/Jupyter</a> provides an enhanced terminal and an interactive notebook environment that is useful for exploratory analysis, as well as creation of interactive, executable documents. For example, the manuscript for this report was composed entirely in Jupyter notebooks.</li>
-</ul>
-<p>No less important are the numerous other tools and packages which accompany these: if there is a scientific or data analysis task you want to perform, chances are someone has written a package that will do it for you.</p>
-<p>To tap into the power of this ecosystem, however, first requires familiarity with the Python language itself.</p>
-<p>As such, this report in no way aims to be a comprehensive introduction to programming, or a full introduction to the Python language itself; if that is what you are looking for, you might check out one of the recommended references listed in <a href="16-Further-Resources.ipynb">Resources for Learning</a>.
-Instead, this will provide a whirlwind tour of some of Python's essential aspects, which are relevant for the exam. We'll start of by building a solid foundation of Phyton's core syntax and semantics, after which we'll take a deep dive into the core principles of data science and machine learning.</p>
+<h3 id="Basic-Plot">Basic Plot<a class="anchor-link" href="#Basic-Plot">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A very basic plot can be created using the <code>.plot()</code> operator. This creates a simple graph with an x and an y-axis.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Create plot with x and y-axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[]</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Looks okay, but not really useful so far. Let's try adding some data to our empty plot. On a still, very basic level, we could try to plot a character "o".</p>
+<p><em>Note:</em> For this to work we must specify some arbitrary x- and y-values first. The "o" character will therefore be the third argument of the plot.The first two values (5,5) are the maximum x and y values that we want to visualize, the third argument ("o") is called a format string character (=fmt) which is used for testing out the basic properties of a graph (not practical in real life).</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f99439cfe90&gt;]</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Awesome! At this point you may wonder how you are supposed to know which potential parameters you can enter into a basic plot. This is where documentation comes in. Simply type in <code>plt.plot?</code> and you will get a list of all possible operations of the respective method.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="err">?</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>As you can see, there are countless possible options to choose from. This is actually one of the main issues with matplotlib. Due to its huge flexibility, countless options of working with the library exist - this, unfortunately, may become confusing. <br><br> However, <strong>noone expects you to know this stuff by heart</strong>. For working with matplotlib, Googling and looking at the documentation is key - even the pros do it all the time.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With that, let's start our tour of the Python language.</p>
+<h3 id="Bacic-Plot---Figures-and-Axes">Bacic Plot - Figures and Axes<a class="anchor-link" href="#Bacic-Plot---Figures-and-Axes">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>While the <code>.plot()</code> option (as shown in the lecture), is a very straight forward approach to creating a simple graph - we often use <code>figures</code> and <code>axes</code> instead.
+In their simplest form, a figure and axes can be created as follows:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In Matplotlib, the <em>figure</em> (an instance of the class <code>plt.Figure</code>) can be thought of as a single container that contains all the objects representing axes, graphics, text, and labels.
+The <em>axes</em> (an instance of the class <code>plt.Axes</code>) is what we see above: a bounding box with ticks and labels, which will eventually contain the plot elements that make up our visualization.</p>
+<p>Once we have created an axes, we can use the <code>ax.plot</code> function to plot some data. Let's plot the same graph again.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f994380ef10&gt;]</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Summing up, we can either use the combination of <code>plt.figure</code>and <code>plt.axes</code> to plot a graph or use <code>plt.plot</code> and let the figure and axes be created for us in the background
+(see <a href="04.00-Introduction-To-Matplotlib.ipynb#Two-Interfaces-for-the-Price-of-One">Two Interfaces for the Price of One</a> for a discussion of these two alternatives).</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>&lt; | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb">Next Page</a> &gt;</p>
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb#scrollTo=SwRbHYOsw7HX"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
+<h3 id="Basic-Plot---Get-Current-Axes">Basic Plot - Get Current Axes<a class="anchor-link" href="#Basic-Plot---Get-Current-Axes">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A third alternative to creating plots is by using the <code>.gca</code> (= get current axes) parameter. As stated by its name, this method gets the current Axes instance of the current figure and allows us to store them in a variable. <br><br> This makes our code much cleaner and allows us to apply further operations on our plot. One common addition to the .gca operator, is the use of the .axis() operator, which allows us to change the properties of the axes we just "got". .axis() allows us to specify the minimum and maximum x &amp; y values of our respective graph. Let's look at an example:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="c1"># plot the point (3,2) using the circle marker</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="c1"># get the current axes (we store our plot in the variable &quot;ax&quot;)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="c1"># Show our plot</span>
+<span class="n">ax</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f99439924d0&gt;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So far so good. Let's now use .axis() to change the shown axis to our liking.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># plot the point (3,2) using the circle marker</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="c1"># get the current axes (we store our plot in the variable &quot;ax&quot;)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="c1"># Set axis properties [xmin, xmax, ymin, ymax] of our plot (which is stored in &quot;ax&quot;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(0.0, 6.0, 0.0, 10.0)</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Exercise For You</strong> <br>
+Look at the following code snippet and try to guess how the resulting plot may look. Then, copy the code, paste it in the empty cell below and check whether you were correct.</p>
+
+<pre><code># plot the point (1.5, 1.5) using the circle marker
+plt.plot(1.5, 1.5, 'o')
+# plot the point (2, 2) using the circle marker
+plt.plot(2, 2, 'o')
+# plot the point (2.5, 2.5) using the circle marker
+plt.plot(2.5, 2.5, 'o')</code></pre>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># test your answer</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_02_Matplotlib.ipynb#scrollTo=gHhoR15gZlaR">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_04_Line_Scatter_Plots.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/06_03_Basics_of_Plotting.ipynb#scrollTo=BW2Z_lFgDi6y"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>

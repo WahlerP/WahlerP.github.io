@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01_01_Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>01_03_Basic_Python_Syntax</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,54 +14259,576 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_03_Basic_Python_Syntax.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="data:image/png;base64,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" alt="68747470733a2f2f65617379706173737265736f75726365732e7765622e6170702f45617379706173735f626c61636b2e7376673f7261773d74727565.png"></p>
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb#scrollTo=uQafnNmX7mF6">Previous Page</a>| <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_04_Basic_Semantics_Variables.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_03_Basic_Python_Syntax.ipynb#scrollTo=GQecVc5A4l2O"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+<h1 id="A-Quick-Tour-of-Python-Language-Syntax">A Quick Tour of Python Language Syntax<a class="anchor-link" href="#A-Quick-Tour-of-Python-Language-Syntax">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Welcome to the official EasyPass Coding Crashcourse!</strong></p>
-<p>The following documents intend to give you a detailed, yet comprehensive understanding of Python. While some not exam relevant topics are covered for the sake of completeness, we try to keep it as concise as possible. Thereby we hope to make it easier for you to navigate the maze that is the new Fundamentals of Computer Science course at HSG.</p>
-<p>Conceived in the late 1980s, Python has since become an essential tool for many programmers, engineers, researchers, and data scientists across academia and industry.
-As a business student, Python will most likely be helpful for extracting meaning from large astronomical datasets, scraping and munging data sources from the Web, or automating day-to-day research tasks.</p>
-<p>The appeal of Python is in its simplicity and beauty, as well as the convenience of the large ecosystem of domain-specific tools that have been built on top of it.
-For example, most of the Python code in scientific computing and data science is built around a group of mature and useful packages:</p>
-<ul>
-<li><a href="http://numpy.org">NumPy</a> provides efficient storage and computation for multi-dimensional data arrays.</li>
-<li><a href="http://scipy.org">SciPy</a> contains a wide array of numerical tools such as numerical integration and interpolation.</li>
-<li><a href="http://pandas.pydata.org">Pandas</a> provides a DataFrame object along with a powerful set of methods to manipulate, filter, group, and transform data.</li>
-<li><a href="http://matplotlib.org">Matplotlib</a> provides a useful interface for creation of publication-quality plots and figures.</li>
-<li><a href="http://scikit-learn.org">Scikit-Learn</a> provides a uniform toolkit for applying common machine learning algorithms to data.</li>
-<li><a href="http://jupyter.org">IPython/Jupyter</a> provides an enhanced terminal and an interactive notebook environment that is useful for exploratory analysis, as well as creation of interactive, executable documents. For example, the manuscript for this report was composed entirely in Jupyter notebooks.</li>
-</ul>
-<p>No less important are the numerous other tools and packages which accompany these: if there is a scientific or data analysis task you want to perform, chances are someone has written a package that will do it for you.</p>
-<p>To tap into the power of this ecosystem, however, first requires familiarity with the Python language itself.</p>
-<p>As such, this report in no way aims to be a comprehensive introduction to programming, or a full introduction to the Python language itself; if that is what you are looking for, you might check out one of the recommended references listed in <a href="16-Further-Resources.ipynb">Resources for Learning</a>.
-Instead, this will provide a whirlwind tour of some of Python's essential aspects, which are relevant for the exam. We'll start of by building a solid foundation of Phyton's core syntax and semantics, after which we'll take a deep dive into the core principles of data science and machine learning.</p>
+<p>Python was originally developed as a teaching language, but its ease of use and clean syntax have led it to be embraced by beginners and experts alike.
+Here we'll begin to discuss the main features of Python's syntax.</p>
+<p>Syntax refers to the structure of the language (i.e., what constitutes a correctly-formed program).
+For the time being, we'll not focus on the semantics – the meaning of the words and symbols within the syntax – but will return to this at a later point.</p>
+<p>Consider the following code example (don't worry if you do not understand anything right away):</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># set the midpoint</span>
+<span class="n">midpoint</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># make two empty lists</span>
+<span class="n">lower</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">upper</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># split the numbers into lower and upper</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">midpoint</span><span class="p">):</span>
+        <span class="n">lower</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">upper</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lower:&quot;</span><span class="p">,</span> <span class="n">lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;upper:&quot;</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>lower: [0, 1, 2, 3, 4]
+upper: [5, 6, 7, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This script is a bit silly, but it compactly illustrates several of the important aspects of Python syntax.
+Let's walk through it and discuss some of the syntactical features of Python</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With that, let's start our tour of the Python language.</p>
+<h2 id="Comments-Are-Marked-by-#">Comments Are Marked by <code>#</code><a class="anchor-link" href="#Comments-Are-Marked-by-#">&#182;</a></h2><p>The script starts with a comment:</p>
+<div class="highlight"><pre><span></span><span class="c1"># set the midpoint</span>
+</pre></div>
+<p>Comments in Python are indicated by a pound sign (<code>#</code>), and anything on the line following the pound sign is ignored by the interpreter.
+This means, for example, that you can have stand-alone comments like the one just shown, as well as inline comments that follow a statement. For example:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># shorthand for x = x + 2</span>
+</pre></div>
+<p>Unlike other programming languages Python doesn’t support multi-line comments  out of the box.
+The recommended way to comment out multiple lines of code in Python is to use consecutive # single-line comments. This is the only way to get “true” source code comments that are removed by the Python parser.
+You may consider using triple-quote """ strings to create something akin to multi-line comments in Python, but this isn’t a perfect technique and your “comments” may turn into accidental docstrings (more on that later).</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># this is a</span>
+<span class="c1"># multi-line comment</span>
+
+<span class="sd">&#39;&#39;&#39; this is also</span>
+<span class="sd">a multi-line comment&#39;&#39;&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Statement">Statement<a class="anchor-link" href="#Statement">&#182;</a></h2><p>Instructions that a Python interpreter can execute are called statements. For example, <code>a = 1</code> is an assignment statement. <code>if</code> statement, <code>for</code> statement, <code>while</code> statement etc. are other kinds of statements which will be discussed later.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>&lt; | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb">Next Page</a> &gt;</p>
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb#scrollTo=SwRbHYOsw7HX"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
+<h2 id="End-of-Line-Terminates-a-Statement">End-of-Line Terminates a Statement<a class="anchor-link" href="#End-of-Line-Terminates-a-Statement">&#182;</a></h2><p>The next line in the script is</p>
+<div class="highlight"><pre><span></span><span class="n">midpoint</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+<p>This is an assignment operation, where we've created a variable named <code>midpoint</code> and assigned it the value <code>5</code>.
+Notice that the end of this statement is simply marked by the end of the line.
+This is in contrast to languages like C and C++, where every statement must end with a semicolon (<code>;</code>).</p>
+<p>In Python, if you'd like a statement to continue to the next line, it is possible to use the "<code>\</code>" marker to indicate this:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span>\
+    <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It is also possible to continue expressions on the next line within parentheses, without using the "<code>\</code>" marker:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span>
+     <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Most Python style guides recommend the second version of line continuation (within parentheses) to the first (use of the "<code>\</code>" marker).</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This applies to all types of paranthesis, e.g.  <code>[</code> <code>]</code>  and  <code>{</code> <code>}</code></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;red&#39;, &#39;blue&#39;, &#39;green&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Semicolon-Can-Optionally-Terminate-a-Statement">Semicolon Can Optionally Terminate a Statement<a class="anchor-link" href="#Semicolon-Can-Optionally-Terminate-a-Statement">&#182;</a></h2><p>Sometimes it can be useful to put multiple statements on a single line.
+The next portion of the script is</p>
+<div class="highlight"><pre><span></span><span class="n">lower</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">upper</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<p>This shows the example of how the semicolon (<code>;</code>) familiar in C can be used optionally in Python to put two statements on a single line.
+Functionally, this is entirely equivalent to writing</p>
+<div class="highlight"><pre><span></span><span class="n">lower</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<p>Using a semicolon to put multiple statements on a single line is generally discouraged by most Python style guides, though occasionally it proves convenient.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Indentation:-Whitespace-Matters!">Indentation: Whitespace Matters!<a class="anchor-link" href="#Indentation:-Whitespace-Matters!">&#182;</a></h2><p>Next, we get to the main block of code:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">midpoint</span><span class="p">:</span>
+        <span class="n">lower</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">upper</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+<p>This is a conditional statement including a for loop and an if statement – we'll look at these types of statements in a moment.
+For now, consider that this demonstrates what is perhaps the most controversial feature of Python's syntax: whitespace is meaningful!</p>
+<p>In programming languages, a <em>block</em> of code is a set of statements that should be treated as a unit.
+In C, for example, code blocks are denoted by curly braces:</p>
+<div class="highlight"><pre><span></span><span class="c1">// C code</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// curly braces indicate code block</span>
+      <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+   <span class="p">}</span>
+</pre></div>
+<p>In Python, code blocks are denoted by <em>indentation</em>:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="c1"># indentation indicates code block</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>4950
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In Python, indented code blocks are always preceded by a colon (<code>:</code>) on the previous line.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The use of indentation helps to enforce the uniform, readable style that many find appealing in Python code.
+But it might be confusing to the uninitiated; for example, the following two snippets will produce different results:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>         <span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>     <span class="o">...</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>      <span class="o">...</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<p>In the snippet on the left, <code>print(x)</code> is in the indented block, and will be executed only if <code>x</code> is less than <code>4</code>.
+In the snippet on the right <code>print(x)</code> is outside the block, and will be executed regardless of the value of <code>x</code>!</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Python's use of meaningful whitespace often is surprising to programmers who are accustomed to other languages, but in practice it can lead to much more consistent and readable code than languages that do not enforce indentation of code blocks.
+If you find Python's use of whitespace disagreeable, I'd encourage you to give it a try: as I did, you may find that you come to appreciate it.</p>
+<p>Finally, you should be aware that the <em>amount</em> of whitespace used for indenting code blocks is up to the user, as long as it is consistent throughout the script.
+By convention, most style guides recommend to indent code blocks by four spaces (one press of the tab button), and that is the convention we will follow in this report.
+Note that many text editors like Emacs and Vim contain Python modes that do four-space indentation automatically.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Whitespace-Within-Lines-Does-Not-Matter">Whitespace <em>Within</em> Lines Does Not Matter<a class="anchor-link" href="#Whitespace-Within-Lines-Does-Not-Matter">&#182;</a></h2><p>While the mantra of <em>meaningful whitespace</em> holds true for whitespace <em>before</em> lines (which indicate a code block), white space <em>within</em> lines of Python code does not matter.
+For example, all three of these expressions are equivalent:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">x</span>             <span class="o">=</span>        <span class="mi">1</span>    <span class="o">+</span>                <span class="mi">2</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Abusing this flexibility can lead to issues with code readibility – in fact, abusing white space is often one of the primary means of intentionally obfuscating code.
+Using whitespace effectively can lead to much more readable code, 
+especially in cases where operators follow each other – compare the following two expressions for exponentiating by a negative number:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">2</span>
+</pre></div>
+<p>to</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+<p>The second version with spaces is much more easily readable.
+Most Python style guides recommend using a single space around binary operators, and no space around unary operators.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Parentheses-Are-for-Grouping-or-Calling">Parentheses Are for Grouping or Calling<a class="anchor-link" href="#Parentheses-Are-for-Grouping-or-Calling">&#182;</a></h2><p>In the previous code snippet, we see two uses of parentheses.
+First, they can be used in the typical way to group statements or mathematical operations:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>14</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>They can also be used to indicate that a <em>function</em> is being called.
+In the next snippet, the <code>print()</code> function is used to display the contents of a variable (see the sidebar).
+The function call is indicated by a pair of opening and closing parentheses, with the <em>arguments</em> to the function contained within:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first value:&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>first value: 1
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;second value:&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>second value: 2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Some functions can be called with no arguments at all, in which case the opening and closing parentheses still must be used to indicate a function evaluation.
+An example of this is the <code>sort</code> method of lists:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[1, 2, 3, 4]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The "<code>()</code>" after <code>sort</code> indicates that the function should be executed, and is required even if no arguments are necessary.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Aside:-A-Note-on-the-print()-Function">Aside: A Note on the <code>print()</code> Function<a class="anchor-link" href="#Aside:-A-Note-on-the-print()-Function">&#182;</a></h2><p>Above we used the example of the <code>print()</code> function.
+The <code>print()</code> function is one piece that has changed between Python <em>2.x</em> and Python <em>3.x</em>. In Python 2, <code>print</code> behaved as a statement: that is, you could write</p>
+<div class="highlight"><pre><span></span><span class="c1"># Python 2 only!</span>
+<span class="o">&gt;&gt;</span> <span class="nb">print</span> <span class="s2">&quot;first value:&quot;</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">first</span> <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+<p>For various reasons, the language maintainers decided that in Python 3 <code>print()</code> should become a function, so we now write</p>
+<div class="highlight"><pre><span></span><span class="c1"># Python 3 only!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first value:&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">first</span> <span class="n">value</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+<p>This is one of the many backward-incompatible constructs between Python 2 and 3.
+As of the writing of this book, it is common to find examples written in both versions of Python, and the presence of the <code>print</code> statement rather than the <code>print()</code> function is often one of the first signs that you're looking at Python 2 code.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Finishing-Up-and-Learning-More">Finishing Up and Learning More<a class="anchor-link" href="#Finishing-Up-and-Learning-More">&#182;</a></h2><p>This has been a very brief exploration of the essential features of Python syntax; its purpose is to give you a good frame of reference for when you're reading the code in later sections.
+Several times we've mentioned Python "style guides", which can help teams to write code in a consistent style (not relevant for your exam).
+The most widely used style guide in Python is known as PEP8, and can be found at <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>.
+As you begin to write more Python code, it would be useful to read through this!
+The style suggestions contain the wisdom of many Python gurus, and most suggestions go beyond simple pedantry: they are experience-based recommendations that can help avoid subtle mistakes and bugs in your code.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb#scrollTo=uQafnNmX7mF6">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_04_Basic_Semantics_Variables.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_03_Basic_Python_Syntax.ipynb#scrollTo=GQecVc5A4l2O"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>

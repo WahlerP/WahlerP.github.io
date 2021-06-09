@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01_01_Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>05_04_Operations_in_Dataframes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,54 +14259,2074 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_04_Operations_in_Dataframes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="data:image/png;base64,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" alt="68747470733a2f2f65617379706173737265736f75726365732e7765622e6170702f45617379706173735f626c61636b2e7376673f7261773d74727565.png"></p>
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_03_Data_Indexing_and_Selecting.ipynb#scrollTo=MTf74ViNrDKw">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_05_Handling_Missing_Values.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_04_Operations_in_Dataframes.ipynb#scrollTo=o2Mon6-xCXb4"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+<h2 id="Operations-on-DataFrames">Operations on DataFrames<a class="anchor-link" href="#Operations-on-DataFrames">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Welcome to the official EasyPass Coding Crashcourse!</strong></p>
-<p>The following documents intend to give you a detailed, yet comprehensive understanding of Python. While some not exam relevant topics are covered for the sake of completeness, we try to keep it as concise as possible. Thereby we hope to make it easier for you to navigate the maze that is the new Fundamentals of Computer Science course at HSG.</p>
-<p>Conceived in the late 1980s, Python has since become an essential tool for many programmers, engineers, researchers, and data scientists across academia and industry.
-As a business student, Python will most likely be helpful for extracting meaning from large astronomical datasets, scraping and munging data sources from the Web, or automating day-to-day research tasks.</p>
-<p>The appeal of Python is in its simplicity and beauty, as well as the convenience of the large ecosystem of domain-specific tools that have been built on top of it.
-For example, most of the Python code in scientific computing and data science is built around a group of mature and useful packages:</p>
+<p>In many cases, one must do more than just accessing certain rows and columns of a dataframe. Let's look at some further applications of our pandas library.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Replacing-NaN">Replacing NaN<a class="anchor-link" href="#Replacing-NaN">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Often datasets have empty fields due to lack of data or wrong data extraction. These fields are filled with None type values which Pandas automatically converts to a special floating point value designated as NAN, which stands for not a number.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>If we create a list of numbers, integers or floats, and put in the None type, Pandas automatically converts this to a special floating point value designated as NAN, which stands for not a number.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0    1.0
+1    2.0
+2    NaN
+dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Before processing our data, we often want to "clean" it. Here, we can replace all NaN fields with a real number of our choice with <code>numpy.fillna(number)</code>.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="s1">&#39;Intel&#39;</span><span class="p">,</span> <span class="s1">&#39;AMD&#39;</span><span class="p">,</span> <span class="s1">&#39;Startup&#39;</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]})</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>% Growth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Apple</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Google</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Intel</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMD</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Startup</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Dropping-Data">Dropping Data<a class="anchor-link" href="#Dropping-Data">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It's easy to delete data in series and DataFrames, and we can use the drop function to do so. This function takes a single parameter, which is the index or roll label, to drop.</p>
+<p>The basic syntax looks as follows:</p>
+<p><strong><code>df.drop(label, axis)</code></strong></p>
+<p>Axis can either be 0 (=drop rows) or 1 (= drop columns)</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">purchase_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Matthias&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Dog Food&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">22.50</span><span class="p">})</span>
+<span class="n">purchase_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Kitty Litter&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">2.50</span><span class="p">})</span>
+<span class="n">purchase_3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Bird Seed&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">})</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">purchase_1</span><span class="p">,</span> <span class="n">purchase_2</span><span class="p">,</span> <span class="n">purchase_3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Store 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Store 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Store 3&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="c1"># define our dataset from before</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Dog Food</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 3</th>
+      <td>Christina</td>
+      <td>Bird Seed</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Store 1&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 2</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 3</th>
+      <td>Christina</td>
+      <td>Bird Seed</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Cost&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Dog Food</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+    </tr>
+    <tr>
+      <th>Store 3</th>
+      <td>Christina</td>
+      <td>Bird Seed</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The drop function doesn't change the DataFrame by default. And instead, returns to you a copy of the DataFrame with the given rows removed.</p>
+<p>We can see that our original DataFrame is still intact.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Dog Food</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 3</th>
+      <td>Christina</td>
+      <td>Bird Seed</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's make a copy with the copy method and do a drop on it instead.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">copy_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">copy_df</span> <span class="o">=</span> <span class="n">copy_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Store 1&#39;</span><span class="p">)</span>
+<span class="n">copy_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 2</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 3</th>
+      <td>Christina</td>
+      <td>Bird Seed</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is a very typical pattern in Pandas, where in-place changes to a DataFrame are only done if need be, usually on changes involving indices.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">copy_df</span><span class="o">.</span><span class="n">drop</span><span class="err">?</span> <span class="c1"># let&#39;s take a further look at drop</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Drop has two interesting optional parameters.</p>
 <ul>
-<li><a href="http://numpy.org">NumPy</a> provides efficient storage and computation for multi-dimensional data arrays.</li>
-<li><a href="http://scipy.org">SciPy</a> contains a wide array of numerical tools such as numerical integration and interpolation.</li>
-<li><a href="http://pandas.pydata.org">Pandas</a> provides a DataFrame object along with a powerful set of methods to manipulate, filter, group, and transform data.</li>
-<li><a href="http://matplotlib.org">Matplotlib</a> provides a useful interface for creation of publication-quality plots and figures.</li>
-<li><a href="http://scikit-learn.org">Scikit-Learn</a> provides a uniform toolkit for applying common machine learning algorithms to data.</li>
-<li><a href="http://jupyter.org">IPython/Jupyter</a> provides an enhanced terminal and an interactive notebook environment that is useful for exploratory analysis, as well as creation of interactive, executable documents. For example, the manuscript for this report was composed entirely in Jupyter notebooks.</li>
+<li><p>The first is called in place, and if it's set to true, the DataFrame will be updated in place, instead of a copy being returned.</p>
+</li>
+<li><p>The second parameter is the axes, which should be dropped.</p>
+<ul>
+<li><p>By default, this value is 0, indicating the row axes.</p>
+</li>
+<li><p>But you could change it to 1 if you want to drop a column.</p>
+</li>
 </ul>
-<p>No less important are the numerous other tools and packages which accompany these: if there is a scientific or data analysis task you want to perform, chances are someone has written a package that will do it for you.</p>
-<p>To tap into the power of this ecosystem, however, first requires familiarity with the Python language itself.</p>
-<p>As such, this report in no way aims to be a comprehensive introduction to programming, or a full introduction to the Python language itself; if that is what you are looking for, you might check out one of the recommended references listed in <a href="16-Further-Resources.ipynb">Resources for Learning</a>.
-Instead, this will provide a whirlwind tour of some of Python's essential aspects, which are relevant for the exam. We'll start of by building a solid foundation of Phyton's core syntax and semantics, after which we'll take a deep dive into the core principles of data science and machine learning.</p>
+</li>
+</ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With that, let's start our tour of the Python language.</p>
+<h3 id="Ranking-a-DataFrame">Ranking a DataFrame<a class="anchor-link" href="#Ranking-a-DataFrame">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can rank a DataFrames according to specific values within a column. Let's explore the <code>rank</code> function.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rank</span><span class="err">?</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can see that rank has some interesting parameters:</p>
+<ul>
+<li><strong>Axis</strong> describes whether we rank rows (0) or columns(1)</li>
+<li>The <strong>method</strong> parameter specifies rules that apply if certain elements have the same value. It defaults to "average" which means that it takes the average for records that have the same rank.</li>
+<li><strong>na_option</strong> specifies what to do with NaN values. Bottom for example, pushes these values to the end of the ranking.</li>
+<li>with <strong>pct</strong> set to True, we can rank according to the percentile of the values.</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># create example dataframe</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span>
+<span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="s1">&#39;Intel&#39;</span><span class="p">,</span> <span class="s1">&#39;AMD&#39;</span><span class="p">,</span> <span class="s1">&#39;Startup&#39;</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]})</span>
+<span class="n">foo</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>% Growth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Apple</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Google</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Intel</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMD</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Startup</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">foo</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+<span class="n">foo</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">[</span><span class="s1">&#39;NA_bottom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">na_option</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">[</span><span class="s1">&#39;pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">% G</span><span class="s1">rowth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">pct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">foo</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>% Growth</th>
+      <th>default</th>
+      <th>max</th>
+      <th>NA_bottom</th>
+      <th>pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Apple</td>
+      <td>4.0</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Google</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.250</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Intel</td>
+      <td>4.0</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AMD</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Startup</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Sorting-DataFrames">Sorting DataFrames<a class="anchor-link" href="#Sorting-DataFrames">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>with <code>pd.sort_values</code> we can sort our dataframe according to specified parameters. Again, we must be careful to specify the correct axis!</p>
+<p><strong><code>df.sort_values(by=[str or list to sort by], axist)</code></strong></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">foo</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span> <span class="s2">&quot;</span><span class="si">% G</span><span class="s2">rowth&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Company</th>
+      <th>% Growth</th>
+      <th>default</th>
+      <th>max</th>
+      <th>NA_bottom</th>
+      <th>pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>AMD</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Apple</td>
+      <td>4.0</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Intel</td>
+      <td>4.0</td>
+      <td>2.5</td>
+      <td>3.0</td>
+      <td>2.5</td>
+      <td>0.625</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Google</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.250</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Startup</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note, that the index changes according to the rows.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>&lt; | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_02_Running_Python_Code.ipynb">Next Page</a> &gt;</p>
-<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/01_01_Introduction.ipynb#scrollTo=SwRbHYOsw7HX"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
+<h2 id="Altering-the-Dataframe">Altering the Dataframe<a class="anchor-link" href="#Altering-the-Dataframe">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's explore how we can make "on-the-go" changes to a DataFrame.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Matthias&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Sponge&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">22.50</span><span class="p">},</span> 
+                  <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Kitty Litter&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">2.50</span><span class="p">},</span> 
+                   <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Spoon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">}],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 2&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Adding-Columns">Adding Columns<a class="anchor-link" href="#Adding-Columns">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can add new columns. Just define the data you want to have in that column.
+Note that it must correspond to the number of rows in your DataFrame!</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;December 1&#39;</span><span class="p">,</span> <span class="s1">&#39;January 1&#39;</span><span class="p">,</span> <span class="s1">&#39;mid-May&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Adding-Single-Values">Adding Single Values<a class="anchor-link" href="#Adding-Single-Values">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can also create a column and fill it with a single value. This is often used to create a placeholder, which will be altered later on.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Delivered&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+      <th>Delivered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># let&#39;s fill the column</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Delivered&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+      <th>Delivered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Add-Series-as-a-Column">Add Series as a Column<a class="anchor-link" href="#Add-Series-as-a-Column">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Remember that we said earlier that, in essence, a Dataframe consists of several combined Series. Therefore, it should be possible to add an entire Series as a column to a Dataframe.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#create series object</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span> <span class="s2">&quot;Negative&quot;</span><span class="p">])</span>
+<span class="n">s</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0    Positive
+1    Negative
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Feedback&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+      <th>Delivered</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+      <td>True</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+      <td>True</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note that the Feedback column did not take in our values. What happened? <br><br>
+Well, our Series s and the DataFrame df use different indexes ([0,1] and [Store 1, Store 2, Store 3] respectively).</p>
+<p>One solution would be resetting the index of our DataFrame via <code>reset_index</code>. This stores our current index as a column and defaults to the standart index. Now the index of our df and s are the same and we can re-insert the values.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="c1">#reset index</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+      <th>Delivered</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Store 1</td>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+      <td>True</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Store 1</td>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+      <td>True</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Store 2</td>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Feedback&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span> <span class="c1"># re-insert values</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Date</th>
+      <th>Delivered</th>
+      <th>Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Store 1</td>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>December 1</td>
+      <td>True</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Store 1</td>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>January 1</td>
+      <td>True</td>
+      <td>Negative</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Store 2</td>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>mid-May</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Indexing-DataFrames">Indexing DataFrames<a class="anchor-link" href="#Indexing-DataFrames">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The example above shows that it can be necessary to change or reset the indices of a DataFrame.</p>
+<p>As we have  seen, both Series and DataFrames can have indices applied to them. The index is essentially a row level label, and we know that rows correspond to axis zero.</p>
+<p>Indices can either be inferred, such as when we create a new series without an index, in which case we get numeric values, or they can be set explicitly, like when we use an dictionary object to create the series.</p>
+<p>Let's re-create our original purchase dataset, and define the indices explicitly.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Matthias&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Sponge&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">22.50</span><span class="p">},</span> 
+                  <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Kitty Litter&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">2.50</span><span class="p">},</span> 
+                   <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span> <span class="s1">&#39;Item Purchased&#39;</span><span class="p">:</span> <span class="s1">&#39;Spoon&#39;</span><span class="p">,</span> <span class="s1">&#39;Cost&#39;</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">}],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 2&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Store 1</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Store 1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>Store 2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Set-an-Index">Set an Index<a class="anchor-link" href="#Set-an-Index">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>One  option for setting an index is to use the <code>set_index()</code> function. This function takes a list of columns and promotes those columns to an index. <code>set_index()</code> is a <strong>destructive process</strong>, it doesn't keep the current index. If you want to keep the current index, you need to manually create a new column and copy into it values from the index attribute.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's go back to our DataFrame. Let's say that we don't want to index the DataFrame by Stores, but instead want to index by the Names of the Customers. First we need to preserve the Store information into a new column. We can do this using the indexing operator or the string that has the column label. Then we can use  <code>set_index()</code> to set the index of the column to the customer names.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Stores&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">)</span> <span class="c1">#this is a destructive oricess</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Stores</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Matthias</th>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>Thomas</th>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>Christina</th>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>Store 2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You'll see that when we create a new index from an existing column it appears that a new first row has been added with empty values. This isn't quite what's happening. And we know this in part because an empty value is actually rendered either as a none or an <code>NaN</code> if the data type of the column is numeric. What's actually happened is that the index has a name.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Reset-Index">Reset Index<a class="anchor-link" href="#Reset-Index">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can get rid of the index completely by calling the function <code>reset_index()</code>. This promotes the index into a column and creates a default numbered index.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+      <th>Stores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Matthias</td>
+      <td>Sponge</td>
+      <td>22.5</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thomas</td>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+      <td>Store 1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Christina</td>
+      <td>Spoon</td>
+      <td>5.0</td>
+      <td>Store 2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>&lt; <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_03_Data_Indexing_and_Selecting.ipynb#scrollTo=MTf74ViNrDKw">Previous Page</a> | <a href="https://wahlerp.github.io/">Home Page</a> | <a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_05_Handling_Missing_Values.ipynb">Next Page</a> &gt;</p>
+<p><a href="https://colab.research.google.com/github/WahlerP/ns_cs_fundamentals/blob/main/05_04_Operations_in_Dataframes.ipynb#scrollTo=o2Mon6-xCXb4"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"></a></p>
 
 </div>
 </div>
