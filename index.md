@@ -63,7 +63,7 @@ Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals 
 ## Machine Learning with Scikit-Learn
 [What is Machine Learning](https://wahlerp.github.io/07_01_Machine_Learning.html)<br>
 [Using Scikit-Learn](https://wahlerp.github.io/07_02_MachineLearning_Scikit_Learnt.html)<br>
-[Model Validation and Hyperparameter](https://wahlerp.github.io/07_03_Model_Validation.html)<br>
+[Model Validation and Hyperparameters](https://wahlerp.github.io/07_03_Model_Validation.html)<br>
 
 # How to go through this course
 Below you can find a collection of interactive jupyter notebooks, with material ranging from the basics of python to machine learning.
