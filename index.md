@@ -65,8 +65,8 @@ Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals 
 [Using Scikit-Learn](https://wahlerp.github.io/07_02_MachineLearning_Scikit_Learnt.html)<br>
 [Model Validation and Hyperparameters](https://wahlerp.github.io/07_03_Model_Validation.html)<br>
 
-# How to go through this course
-Below you can find a collection of interactive jupyter notebooks, with material ranging from the basics of python to machine learning.
+# How to use this course
+Above you can find a collection of interactive jupyter notebooks, covering material ranging from the basics of python to machine learning.
 
 We strongly encourage you to focus on understanding rather than learning by heart. Therefore, feel free to run, adapt and experiment with the code to get the most out of it. Remember: Practice makes perfect!
 
