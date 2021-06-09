@@ -1,37 +1,16 @@
-## This is a EasyPass Website
+# EasyPass Coding Crashcourse
 
-You can use the [editor on GitHub](https://github.com/WahlerP/WahlerP.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals of Computer Science @ HSG! The following chapters include several jupyter notebooks which elaborate on the practical aspects of the course. For a tailor-made refresher on the theory as well as several exam-relevant exercises check out our extensive summary, which is available [Here](https://easypass-learning.ch/).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# How to read this course
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WahlerP/WahlerP.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# Table of Contents
+## Basics of Python
+### [Introduction](https://wahlerp.github.io/01_01_Introduction.html)
+### [Running Python Code](https://wahlerp.github.io/01_02_Running_Python_Code.html)
+### [Python Syntax](https://wahlerp.github.io/01_03_Basic_Python_Syntax.html)
+### [Python Semantics: Variables & Objects](https://wahlerp.github.io/01_04_Basic_Semantics_Variables.html)
+### [Python Semantics: Operators](https://wahlerp.github.io/01_05_Basic_Semantics_Operators.html)
+### [Data Types: Scalars](https://wahlerp.github.io/01_06_Built_In_Data_Types_Scalars.html)
+### [Data Types: Data Structures](https://wahlerp.github.io/01_07_Built_In_Data_Types_Data_Structures.html)
+### [Basics of Python](https://wahlerp.github.io/01_08_Built_In_Data_Types_Type_Conversion.html)
