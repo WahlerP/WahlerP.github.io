@@ -45,3 +45,27 @@ Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals 
 ##### [Broadcasting](https://wahlerp.github.io/04_05_Broadcasting.html)
 ##### [Sorting Arrays](https://wahlerp.github.io/04_06_Sorting_Arrays.html)
 
+## Data Science: Pandas
+##### [Data Wrangling with Pandas](https://wahlerp.github.io/05_01_Data_Wrangling_With_Pandas.html)
+##### [Series and DataFrames](https://wahlerp.github.io/05_02_Introduction_to_Series_and_DataFrames.html)
+##### [Data Indexing and Selecting](https://wahlerp.github.io/05_03_Data_Indexing_and_Selecting.html)
+##### [Operations in DataFrames](https://wahlerp.github.io/05_04_Operations_in_Dataframes.html)
+##### [Handling Missing Values](https://wahlerp.github.io/05_05_Handling_Missing_Values.html)
+##### [Merging DataFrames](https://wahlerp.github.io/05_06_Merging_DataFrames.html)
+##### [Aggregation and Grouping](https://wahlerp.github.io/05_07_Aggregation_and_Grouping.html)
+
+## Data Visualization
+##### [Why Data Visualization?](https://wahlerp.github.io/06_01_Data_Visualization.html)
+##### [Matplotlib](https://wahlerp.github.io/06_02_Matplotlib.html)
+##### [Basics of Plotting](https://wahlerp.github.io/06_03_Basics_of_Plotting.html)
+##### [Line Graphs & Scatter Plots](https://wahlerp.github.io/06_04_Line_Scatter_Plots.html)
+##### [Bar Charts](https://wahlerp.github.io/06_05_Bar_Charts.html)
+##### [Subplots](https://wahlerp.github.io/06_06_Subplots.html)
+##### [Further Plots: Historgram, Boxplot & Heatmap](https://wahlerp.github.io/06_07_Historgrams_Boxplot_Heatmap.html)
+##### [Plotting with Pandas](https://wahlerp.github.io/06_08_Plotting_with_Pandas.html)
+
+## Machine Learning with Scikit-Learn
+#### [What is Machine Learning](https://wahlerp.github.io/07_01_Machine_Learning.html)
+#### [Using Scikit-Learn](https://wahlerp.github.io/07_02_MachineLearning_Scikit_Learnt.html)
+#### [Model Validation and Hyperparameter](https://wahlerp.github.io/07_03_Model_Validation.html)
+
