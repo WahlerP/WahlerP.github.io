@@ -1,8 +1,18 @@
 # EasyPass Coding Crashcourse
 
-Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals of Computer Science @ HSG! The following chapters include several jupyter notebooks which elaborate on the practical aspects of the course. For a tailor-made refresher on the theory as well as several exam-relevant exercises check out our extensive summary, which is available [Here](https://easypass-learning.ch/).
+Welcome to the official EasyPass Coding Crashcourse for the course Fundamentals of Computer Science @ HSG! Coding is not easy and definitely not intuitive at first. However, since there is no other way around it, this compilation of notebooks provides an interactive overview of essential concepts and helps you to familiarize yourself with the exam relevant material. For a tailor-made refresher on the theory as well as several exam-relevant exercises check out our extensive summary, which is available [Here](https://easypass-learning.ch/).
 
-# How to read this course
+
+
+# How to go through this course
+Below you can find a collection of interactive jupyter notebooks, with material ranging from the basics of python to machine learning.
+
+We strongly encourage you to focus on understanding rather than learning by heart. Therefore, feel free to run, adapt and experiment with the code to get the most out of it. Remember: Practice makes perfect!
+
+Note: If you open our notebooks you can always edit the code without changing the original file, allowing you to practice by yourself. You can even save changes to your personal Google Drive.
+
+To access/run the notebooks just click on the respective Google Colab links. If you get the warning “This notebook was not authored by Google” don’t worry, just press “Run Anyway”.
+
 
 # Table of Contents
 ## Basics of Python
