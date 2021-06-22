@@ -1,4 +1,4 @@
-Welcome to the official EasyPass Coding Crashcourse! Coding is not easy and definitely not intuitive at first. However, since there is no other way around it, this compilation of notebooks provides an interactive overview of essential concepts and helps you to familiarize yourself with some of the core concepts around programming basics, data science, data visualization and machine learning.
+Welcome to the official EasyPass Coding Crashcourse! Coding is not easy and definitely not intuitive at first. This compilation of notebooks provides an interactive overview of essential concepts and helps you to familiarize yourself with some of the core concepts around programming basics, data science, data visualization and machine learning.
 
 # Table of Contents
 ## Basics of Python
